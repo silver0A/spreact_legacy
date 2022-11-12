@@ -94,6 +94,12 @@
 				<configuration>
 					<warName>${packagingName}</warName>
                     <outputDirectory>${packageOutputDirectory}</outputDirectory>
+                    <webResources>
+						<webResource>
+							<directory>src\main\resources</directory>
+							<targetPath>WEB-INF\classes\</targetPath>
+						</webResource>
+					</webResources>
 				</configuration>
 			</plugin>
         </plugins>
@@ -167,17 +173,17 @@
                         <executions>
                             <execution>
                                 <id>copy-resources</id>
-                                <phase>validate</phase>
+                                <phase>generate-resources</phase>
                                 <goals>
                                     <goal>copy-resources</goal>
                                 </goals>
                                 <configuration>
                                     <encoding>UTF-8</encoding>
-                                    <outputDirectory>${project.build.directory}\classes\public</outputDirectory>
+                                    <outputDirectory>${project.build.directory}/spreact_legacy</outputDirectory>
+                                    <overwrite>true</overwrite>
                                     <resources>          
                                         <resource>
                                             <directory>${project.basedir}\frontend\build</directory>
-                                            <filtering>true</filtering>
                                         </resource>
                                     </resources>              
                                 </configuration>            

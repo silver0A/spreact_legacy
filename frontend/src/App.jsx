@@ -5,7 +5,7 @@ function App() {
   const [test, setTest] = useState();
 
   useEffect(() => {
-    axios.post('/api/test', {param1: (new Date()).toString()}, {headers:{'Content-Type':'application/json; charset=UTF-8'}})
+    axios.post('/api/test.ajax', {param1: (new Date()).toString()}, {headers:{'Content-Type':'application/json; charset=UTF-8'}})
     .then(({data}) => setTest(data))
     .catch(error => console.log(error))
   }, []);

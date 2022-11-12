@@ -46,10 +46,14 @@
 
     <servlet-mapping>
         <servlet-name>appServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>*.ajax</url-pattern>
     </servlet-mapping>
 
     <session-config>
         <session-timeout>60</session-timeout>
     </session-config>
+
+    <welcome-file-list>
+        <welcome-file>/index.html</welcome-file>
+    </welcome-file-list>
 </web-app>
